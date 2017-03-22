@@ -37,7 +37,7 @@ public class OrderService {
 
         try {
             Charge.create(chargeParams);
-            return Response.ok("Complete!.", MediaType.APPLICATION_JSON).build();
+            return Response.ok("Complete!.", MediaType.TEXT_PLAIN).build();
 
         } catch (InvalidRequestException | CardException ex) {
             throw new WebApplicationException(Response.status(Status.BAD_REQUEST).entity(ex.getMessage()).build());
